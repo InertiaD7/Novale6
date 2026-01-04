@@ -16,50 +16,31 @@
             font-family: monospace;
         }
 
-        img {
-            width: 30px;
-            height: 30px;
-        }
-
         .boxStyle {
-            justify-self: center;
-            align-self: center;
+            
             width: 100px;
             height: 100px;
             background-color: tan;
-            margin: 20px;
-
-            align-items: center;
-            padding-left: 18px;
-            padding-top: 20px;
+            text-align: center !important;
+            align-content: center;
+            border-radius: 5px;
+            box-shadow:
+                0 0 20px rgba(5, 4, 0, 0.5),
+                0 0 40px rgba(212, 175, 55, 0.3),
+                0 0 60px rgba(212, 175, 55, 0.2);
+            
+            ;
         }
 
-        #box1 {
-            margin-top: 0px;
-            position: relative;
-            left: 110px;
-        }
-
-        #box2 {
-            position: relative;
-            right: 110px;
-        }
-
-        #box3 {
-            position: relative;
-            left: 110px;
-        }
-
-        #box4 {
-            position: relative;
-            right: 110px;
+        .space {
+            width: 100px;
+            height: 100px;
+            visibility: hidden;
         }
 
         .home {
-            position: absolute;
-            right: 55rem;
-            top: 5rem;
-
+            position: relative;
+            
         }
 
         .fa-person {
@@ -69,16 +50,30 @@
 
         .phone {
             justify-self: center;
+            width: 400px;
+            height: auto;
+            margin: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 100px 100px 100px 100px;
+            place-items: center;
+            gap: 10px;
+            padding: 2%;
+        }
+
+        .trailer {
             background-color: chocolate;
             width: 400px;
-            height: 550px;
-            padding: 20px;
-            margin: 20px;
+            height: 500px;
+            justify-self: center;
+            
         }
 
         .button {
-            display: flex;
-            justify-content: space-evenly;
+            display: grid;
+            width: 400px;
+            justify-self: center;
+            grid-template-columns: repeat(2, 1fr);
         }
 
         #goUp {
@@ -89,6 +84,8 @@
             padding: 5px;
             border: 1px solid white;
             cursor: pointer;
+            width: 5rem;
+            text-align: center;
         }
 
         #goUp:active {
@@ -104,6 +101,7 @@
             padding: 5px;
             border: 1px solid white;
             cursor: pointer;
+            width: 5rem;
         }
 
         #goDown:active {
@@ -114,15 +112,17 @@
 </head>
 
 <body>
-    <div class="phone">
-
-        <div class="home" id="home"><i class="fa-solid fa-person" id="person"></i></div>
-
-        <div id="box1" class="boxStyle"></div>
-        <div id="box2" class="boxStyle"></div>
-        <div id="box3" class="boxStyle"></div>
-        <div id="box4" class="boxStyle"></div>
-
+    <div class="trailer">
+        <div class="phone">
+            <div class="home" id="home"><i class="fa-solid fa-person" id="person"></i></div>
+            <div id="box1" class="boxStyle"></div>
+            <div id="box2" class="boxStyle"></div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div id="box3" class="boxStyle"></div>
+            <div id="box4" class="boxStyle"></div>
+            <div class="space"></div>
+        </div>
         <div class="button">
             <span id="goUp" onclick="goUp()">GO UP</span>
             <span id="goDown" onclick="goDown()">GO DOWN</span>
